@@ -15,6 +15,7 @@
 " :set expandtab
 " :set shiftwidth=4
 " :set softtabstop=4
+:set signcolumn=yes
 :set ttimeoutlen=0
 :set updatetime=300
 :set encoding=UTF-8
@@ -55,6 +56,7 @@ Plug 'lukas-reineke/indent-blankline.nvim' " Indent line
 Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'} " Markdown preview
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Better syntax highlighting
 Plug 'tribhuwan-kumar/NVIMColorPicker' " Colorpicker
+Plug 'folke/trouble.nvim'
 
 " Neotree & its dependencies
 Plug 'nvim-tree/nvim-web-devicons'
@@ -62,7 +64,24 @@ Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-neo-tree/neo-tree.nvim'
 
 " Auto-completion for different file types 
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+
+" LSP
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'neovim/nvim-lspconfig'
+" Snippets engine
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
+" Completion
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+" Completion sources
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
 
 " Wilder for Nvim command mode 
 Plug 'gelguy/wilder.nvim', { 'do': 'UpdateRemotePlugins' }
@@ -71,6 +90,7 @@ Plug 'romgrk/fzy-lua-native', { 'do': 'make' }
 " Debugger
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
+Plug 'nvim-neotest/nvim-nio'
 
 " Language specific DAP
 Plug 'mfussenegger/nvim-dap-python' " For python
@@ -135,6 +155,7 @@ nnoremap C "_C
 nnoremap X "+x
 nnoremap xx "+Vx
 nnoremap dd "_dd
+nnoremap cc "_cc
 " Visual mode
 vnoremap p "_dP
 vnoremap d "_d
@@ -152,14 +173,7 @@ vmap <C-h> b
 vmap <C-l> e
 nmap ,p o<Esc>p
 nnoremap <C-s> :w<CR>
-nnoremap <C-c> yy
 nnoremap <C-a> ggVG
-nnoremap <C-z> u
-nnoremap <C-S-z> r
-nnoremap <C-x> dd
-vnoremap <C-z> u
-vnoremap <C-x> x
-vnoremap <C-c> "+y
 vnoremap <BS> "_d
 nnoremap <Leader>z I<Esc>vg_
 
@@ -250,6 +264,14 @@ vnoremap <M-j> :m '>+1<CR>gv=gv
 vnoremap <M-k> :m '<-2<CR>gv=gv
 
 
+" <-------------------------------LSP & COMPLETION---------------------------------->
+lua require("mason").setup()
+lua require("mason-lspconfig").setup()
+lua require("LSP_config")
+lua require("Completion-config")
+lua require("Mason-config")
+" lua require("trouble.nvim")
+
 " <-----------------------------Indentline------------------------------------>
 lua require("indentline-config")
 
@@ -280,7 +302,6 @@ lua require('autopairs-config')
 lua require("Neotree-config")
 
 " keybindings
-" nnoremap <Leader>w :Neotree focus<CR>
 nnoremap <Leader>q :Neotree toggle<CR>
 nnoremap <C-q> :Neotree toggle<CR>
 
@@ -433,12 +454,20 @@ let g:webdevicons_enable_airline_statusline = 1
 let g:airline#extensions#tagbar#enabled = 0
 
 " Airline with COC
-let g:airline#extensions#coc#enabled = 1
-let g:airline#extensions#coc#show_coc_status = 1
-let g:airline#extensions#coc#warning_symbol = '   '
-let g:airline#extensions#coc#error_symbol = ' '
-let g:airline#extensions#coc#stl_format_err = '%C(%L)'
-let g:airline#extensions#coc#stl_format_warn = '%C(%L)'
+" let g:airline#extensions#coc#enabled = 1
+" let g:airline#extensions#coc#show_coc_status = 1
+" let g:airline#extensions#coc#warning_symbol = '   '
+" let g:airline#extensions#coc#error_symbol = ' '
+" let g:airline#extensions#coc#stl_format_err = '%C(%L)'
+" let g:airline#extensions#coc#stl_format_warn = '%C(%L)'
+
+" Airline with LSP
+let g:airline#extensions#nvimlsp#enabled = 1
+let g:airline#extensions#nvimlsp#error_symbol = ' ' 
+let g:airline#extensions#nvimlsp#warning_symbol = '   ' 
+let g:airline#extensions#nvimlsp#show_line_numbers = 1
+let g:airline#extensions#nvimlsp#open_lnum_symbol = '(L' 
+let g:airline#extensions#nvimlsp#close_lnum_symbol = ')'
 
 
 " <-----------------------------Wilder------------------------------------>
@@ -485,5 +514,5 @@ let g:NVIMColorPicker#InsertBefore#TheCursor = 1
 
 
 " <-----------------------------Sources------------------------------------>
-:set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+:setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 
