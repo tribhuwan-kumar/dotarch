@@ -11,10 +11,10 @@
 :set termguicolors
 :set relativenumber
 :set mouse=a
-" :set tabstop=4
-" :set expandtab
-" :set shiftwidth=4
-" :set softtabstop=4
+:set tabstop=4
+:set expandtab
+:set shiftwidth=4
+:set softtabstop=4
 :set signcolumn=yes
 :set ttimeoutlen=0
 :set updatetime=300
@@ -28,7 +28,7 @@
 call plug#begin()
 
 Plug 'tpope/vim-obsession' " Session Management
-Plug 'github/copilot.vim' " Copilot
+" Plug 'github/copilot.vim' " Copilot
 Plug 'tpope/vim-surround' " Surrounding ysw
 Plug 'tpope/vim-commentary' " For Commenting gcc & gc
 Plug 'lifepillar/pgsql.vim' " PSQL Pluging needs :SQLSetType pgsql.vim
