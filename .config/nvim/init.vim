@@ -33,14 +33,12 @@ Plug 'tpope/vim-surround' " Surrounding ysw
 Plug 'tpope/vim-commentary' " For Commenting gcc & gc
 Plug 'lifepillar/pgsql.vim' " PSQL Pluging needs :SQLSetType pgsql.vim
 Plug 'norcalli/nvim-colorizer.lua' " Colorizer
-Plug 'tc50cal/vim-terminal' " Vim Terminal
 Plug 'preservim/tagbar' " Tagbar for code navigation
 Plug 'mg979/vim-visual-multi' " CTRL + N for multiple cursors
 Plug 'akinsho/toggleterm.nvim' " For Terminal
 Plug 'windwp/nvim-autopairs' " For auto closing ( [ {
 Plug 'sheerun/vim-polyglot'  " Plugin for syntax highlighting and language features
 Plug 'lewis6991/gitsigns.nvim' " For git tracking
-Plug 'rest-nvim/rest.nvim' " HTTP Client
 Plug 'nvim-lua/plenary.nvim' " For rest.nvim  
 Plug 'aurum77/live-server.nvim' " Live Server
 Plug 'gregsexton/MatchTag' " For matching html tags
@@ -62,10 +60,6 @@ Plug 'folke/trouble.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-neo-tree/neo-tree.nvim'
-
-" Auto-completion for different file types 
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 " LSP
 Plug 'williamboman/mason.nvim'
@@ -452,14 +446,6 @@ let g:webdevicons_enable_airline_statusline = 1
 
 " Tagbar
 let g:airline#extensions#tagbar#enabled = 0
-
-" Airline with COC
-" let g:airline#extensions#coc#enabled = 1
-" let g:airline#extensions#coc#show_coc_status = 1
-" let g:airline#extensions#coc#warning_symbol = '   '
-" let g:airline#extensions#coc#error_symbol = ' '
-" let g:airline#extensions#coc#stl_format_err = '%C(%L)'
-" let g:airline#extensions#coc#stl_format_warn = '%C(%L)'
 
 " Airline with LSP
 let g:airline#extensions#nvimlsp#enabled = 1
