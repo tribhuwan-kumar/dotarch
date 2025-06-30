@@ -79,6 +79,8 @@ require("catppuccin").setup({
         Pmenu = { bg = colors.mantle, fg = "" },
         PmenuSel = { bg = colors.surface0, fg = "" },
         VertSplit = { bg = colors.base, fg = colors.surface0 },
+        Visual = { bg = colors.surface0 },
+        VisualNOS = { bg = colors.surface0 },
         YankHighlight = { bg = colors.surface2 },
         FidgetTask = { fg = colors.subtext2 },
         FidgetTitle = { fg = colors.peach },

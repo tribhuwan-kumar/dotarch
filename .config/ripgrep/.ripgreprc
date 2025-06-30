@@ -16,3 +16,6 @@ web:*.{html,css,js}*
 --glob=!**/target/*
 --glob=!**/.next/*
 --glob=!**/dist/*
+--glob=!**/env/*
+--glob=!**/venv/*
+--glob=!**/*.svg

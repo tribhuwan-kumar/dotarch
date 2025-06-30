@@ -150,3 +150,16 @@ lspkind.init({
   },
 })
 
+-- lsp confs
+-- npm install -g @vue/language-server
+vim.lsp.config('vue_ls', {
+  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+  init_options = {
+    vue = {
+      hybridMode = false,
+    },
+  },
+})
+
+-- vim.lsp.config['ts_ls'] = {}
+

@@ -7,6 +7,7 @@ require("neo-tree").setup({
     filtered_items = {
       visible = false,
       hide_by_name = {
+        "venv",
         "target",
         "__pycache__",
         "node_modules",
