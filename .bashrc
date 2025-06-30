@@ -38,6 +38,8 @@ bind "set completion-ignore-case on"
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
 # Some exports
+export LC_ALL="en_IN.UTF-8"
+export LANG="en_IN.UTF-8"
 export EDITOR="nvim"
 export TERMIAL="kitty"
 export BAT_THEME="ansi"
