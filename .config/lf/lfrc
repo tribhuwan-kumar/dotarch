@@ -41,7 +41,7 @@ cmd trash ${{
   files=$(printf "$fx" | tr '\n' ';')
   while [ "$files" ]; do
     file=${files%%;*}
-    trashbhuwan -p "$(basename "$file")" 
+    trash "$(basename "$file")"
     if [ "$files" = "$file" ]; then
       files=''
     else
@@ -54,29 +54,29 @@ cmd restore_trash ${{
   files=$(printf "$fx" | tr '\n' ';')
   while [ "$files" ]; do
     file=${files%%;*}
-    trashbhuwan -r "$(basename "$file")" 
+    trash -r "$(basename "$file")"
     if [ "$files" = "$file" ]; then
       files=''
     else
       files="${files#*;}"
     fi
-  done 
+  done
 }}
 
 cmd delete_trash ${{
   files=$(printf "$fx" | tr '\n' ';')
   while [ "$files" ]; do
     file=${files%%;*}
-    trashbhuwan -dl "$(basename "$file")" 
+    trash -dl "$(basename "$file")"
     if [ "$files" = "$file" ]; then
       files=''
     else
       files="${files#*;}"
     fi
-  done 
+  done
 }}
 
-cmd copy_files ${{ 
+cmd copy_files ${{
   files=$(printf "$fx" | tr '\n' ';')
   mime=$(file --mime-type -b "$files")
   if [[ $mime == image/* ]]; then
@@ -98,7 +98,7 @@ map p paste
 map x cut
 map y copy
 map J :toggle; down
-map K :toggle; up 
+map K :toggle; up
 map <enter> open
 map <esc> unselect
 map q quit

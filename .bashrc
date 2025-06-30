@@ -7,8 +7,8 @@
 
 PS1='[\u@\h \W]\$ '
 
-eval "$(fzf --bash)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(fzf --bash)"
 eval "$(zoxide init --cmd cd bash)"
 eval "$(oh-my-posh --init --shell bash --config ~/dotarch/accessories/vendetta.omp.json)"
 
@@ -43,7 +43,6 @@ export TERMIAL="kitty"
 export BAT_THEME="ansi"
 export BROWSER="firefox"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-export PATH="$HOME/.cargo/env:$PATH"
 
 # FZF
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!**/.git/*" --glob "!**/__pycache__/*" --glob "!**/node_modules/*" --glob "!**/env/*" --glob "!**/target/*"'
@@ -258,3 +257,5 @@ ex=:\
 # Bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$HOME/.cargo/env:$PATH"
+. "$HOME/.cargo/env"
