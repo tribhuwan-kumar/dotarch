@@ -1,9 +1,9 @@
-# My dotarch
+# My dotfiles
 This is a collection of my dotfiles!!
 
 ### Set up in Arch Linux:
 ```bash
-curl -s -O https://raw.githubusercontent.com/tribhuwan-kumar/dotarch/main/accessories/setup.sh && chmod +x setup.sh && ./setup.sh
+curl -s -O https://raw.githubusercontent.com/tribhuwan-kumar/dotfiles/main/accessories/setup.sh && chmod +x setup.sh && ./setup.sh
 ```
 ### Softwares I use:
 
@@ -18,6 +18,6 @@ curl -s -O https://raw.githubusercontent.com/tribhuwan-kumar/dotarch/main/access
 - Trash Manager: [trashbhuwan](https://github.com/tribhuwan-kumar/trashbhuwan)
 - Image Viewer: [imv](https://sr.ht/~exec64/imv/)
 - Video Player: [mpv](https://mpv.io/)
-- Fonts: [Fantasque Sans Mono](https://github.com/belluzj/fantasque-sans) & [San Francisco](https://github.com/tribhuwan-kumar/dotarch/tree/main/accessories/San%20Francisco)
+- Fonts: [Fantasque Sans Mono](https://github.com/belluzj/fantasque-sans) & [San Francisco](https://github.com/tribhuwan-kumar/dotfiles/tree/main/accessories/San%20Francisco)
 
 For managing dotfiles I use [Stow](https://www.gnu.org/software/stow/) & For PDFs I use [Firefox](https://www.mozilla.org/en-US/firefox/new/)
