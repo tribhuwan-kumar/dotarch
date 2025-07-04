@@ -99,7 +99,7 @@ call plug#end()
 
 
 " ========================================...Paths
-let g:python3_host_prog = "/usr/bin/python3"
+let g:python3_host_prog = "/usr/local/bin/python3"
 
 " ========================================...Keybindings
 " let mapleader = "z"

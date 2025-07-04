@@ -5,11 +5,11 @@
   "eslint-lsp": "4.10.0",
   "html-lsp": "4.10.0",
   "jdtls": "v1.46.1",
-  "pyright": "1.1.401",
-  "rust-analyzer": "2025-05-26",
-  "tailwindcss-language-server": "0.14.20",
+  "lua-language-server": "3.15.0",
+  "pyright": "1.1.402",
+  "rust-analyzer": "2025-06-30",
+  "tailwindcss-language-server": "0.14.23",
   "typescript-language-server": "4.3.4",
   "vim-language-server": "2.3.1",
-  "wasm-language-tools": "v0.5.0",
-
+  "wasm-language-tools": "v0.5.1"
 }
